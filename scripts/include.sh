@@ -48,6 +48,7 @@ function NOTE() {
 
 function PACKAGES() {
   sudo apt-get -y -qq install "$@"
+  sudo apt-get clean
 }
 
 function PACKAGE() {
