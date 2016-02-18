@@ -11,12 +11,15 @@ RUN apt-get -qq update && \
 
 env setup_user zen
 env setup_home "/home/$setup_user"
+env setup_password zen
 
 # create user and home
 
 RUN mkdir -p "$setup_home" && \
     useradd "$setup_user" && \
-    chown "$setup_user:$setup_user" "$setup_home"
+    chown "$setup_user:$setup_user" "$setup_home" && \
+    passwd -d "$setup_user" && \
+    echo "$setup_user ALL=(ALL) ALL" >> /etc/sudoers 
 
 WORKDIR "$setup_home"
 
@@ -25,13 +28,15 @@ WORKDIR "$setup_home"
 ADD setup-zen setup
 ADD docker-home .
 
+RUN chown -R "$setup_user:$setup_user" "$setup_home"
+
 # create volumes
 
 VOLUME "$setup_home/cp-local-development"
 
 # install
 
-# RUN ./install.sh
+RUN /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh" ./setup/install.sh
 
 # prepare for bashing
 

@@ -8,19 +8,20 @@ COMMENT "  http://www.nearform.com/nodecrunch/nodejs-sudo-free/"
 
 SUBTITLE "Install NVM"
 
-apt-get -y -qq install curl
+PACKAGE curl
 curl -q https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
 
-for file in "~/.nvm/nvm.sh" "~/.bashrc"
+for file in "$HOME/.nvm/nvm.sh" "$HOME/.bashrc"
 do
   if [ -f "$file" ]
   then
+    set +e
     source "$file"
+    set -e
   else
     WARN "File \"$file\" not found."
   fi
 done
-
 
 if ! type nvm 1>/dev/null 2>/dev/null
 then
