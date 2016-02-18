@@ -25,6 +25,6 @@ sleep 20
 
 sleep 10
 
-kill $PID
-wait $PID
+kill $PID || true
+wait $PID || true
 
