@@ -36,7 +36,7 @@ VOLUME "$setup_home/cp-local-development"
 
 # install
 
-RUN /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh" ./setup/install.sh
+# RUN /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh" ./setup/install.sh
 
 # prepare for bashing
 

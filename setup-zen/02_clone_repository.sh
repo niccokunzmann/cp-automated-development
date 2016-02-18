@@ -11,7 +11,9 @@ mkdir -p "$cp_local_development_folder"
 
 IN_REPOSITORY
 
-if [ -n "`ls -la`" ]
+PACKAGE git
+
+if [ -n "`ls`" ]
 then
   SUBTITLE "Update existing repository"
   COMMENT "If you do not like updating, you can delete the folder \"$cp_local_development_folder\"."
