@@ -22,9 +22,9 @@ NOTE "Changing locale for tests"
 #     PhantomJS 1.9.8 (Linux 0.0.0) review-champion-application-controller load dojo lead FAILED
 #         Error: Unexpected request: GET /locale/data?format=mf&lang=C
 #         Expected GET /locale/data?format=mf&lang=en_IE
-locale-gen en_IE
+sudo locale-gen en_IE
 # not sure if this is necessary
-update-locale LANG=en_IE
+sudo update-locale LANG=en_IE
 export LANG=en_IE
 echo "
 # updating language for tests from $0
