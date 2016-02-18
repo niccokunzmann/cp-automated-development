@@ -21,7 +21,8 @@ then
   git pull "$cp_local_development_url"
 else
   SUBTITLE "Download the source code"
-  git clone --depth=1 "$cp_local_development_url" .
+  sudo git clone --depth=1 "$cp_local_development_url" .
+  sudo chown -R "`whoami`" .
 fi
 
 
