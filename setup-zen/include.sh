@@ -2,6 +2,14 @@
 # This file checks for the configuration is right 
 # to ensure that the installation goes smoothly.
 
+for file in "$HOME/.nvm/nvm.sh" "$HOME/.bashrc"
+do
+  if [ -f "$file" ]
+  then
+    source "$file"
+  fi
+done
+
 set -e
 
 commented=false

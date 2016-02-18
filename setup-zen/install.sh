@@ -1,13 +1,14 @@
 #!/bin/bash
 
-installation_directory="`dirname \"$0\"`"
+cd "`dirname \"$0\"`"
 
-source "$installation_directory/01_install_nodejs.sh"
-source "$installation_directory/02_clone_repository.sh"
-source "$installation_directory/03_install_packages.sh"
-source "$installation_directory/04_install_postgresql.sh"
-source "$installation_directory/05_install_modules.sh"
-source "$installation_directory/06_initialize.sh"
-source "$installation_directory/07_testdata.sh"
+
+for file in 01_install_nodejs.sh 02_clone_repository.sh 03_install_packages.sh 04_install_postgresql.sh 05_install_modules.sh 06_initialize.sh 07_testdata.sh
+do
+  "./$file"
+done
+  
+
+
 
 
