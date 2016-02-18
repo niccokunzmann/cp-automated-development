@@ -63,13 +63,14 @@ function CONFIG_ERROR() {
 # Do not set the path of we include mutiple times
 # absolute_repository_path=
 function IN_REPOSITORY() {
-  if [ -z "absolute_repository_path" ]
+  if [ -z "$absolute_repository_path" ]
   then
     cd "$cp_local_development_folder"
     absolute_repository_path="`pwd`"
   else
     cd "$absolute_repository_path"
   fi
+  NOTE "Working in \"`pwd`\""
 }
 
 # --------------

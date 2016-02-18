@@ -13,7 +13,7 @@ IN_REPOSITORY
 
 PACKAGE git
 
-if [ -n "`ls`" ]
+if [ -d ".git" ]
 then
   SUBTITLE "Update existing repository"
   COMMENT "If you do not like updating, you can delete the folder \"$cp_local_development_folder\"."
