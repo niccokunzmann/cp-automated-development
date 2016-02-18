@@ -1,21 +1,40 @@
 FROM ubuntu:15.10
 
-RUN mkdir -p /user/src/app/
-WORKDIR /user/src/app/
+# update the system
 
-ADD scripts scripts
-RUN chmod +x scripts/*.sh
+RUN apt-get -qq update && \
+    apt-get -qq -y install sudo && \
+    apt-get -qq autoremove && \
+    apt-get -qq clean
 
-ADD docker docker
-RUN chmod +x docker/*.sh
+# set variables
 
+env setup_user zen
+env setup_home "/home/$setup_user"
 
-RUN apt-get -qq update
+# create user and home
 
-VOLUME /user/src/app/cp-local-development
+RUN mkdir -p "$setup_home" && \
+    useradd "$setup_user" && \
+    chown "$setup_user:$setup_user" "$setup_home"
 
-WORKDIR /user/src/app/scripts
+WORKDIR "$setup_home"
 
-RUN ./install.sh
+# adding files
 
-WORKDIR /user/src/app/cp-local-development
+ADD setup-zen setup
+ADD docker-home .
+
+# create volumes
+
+VOLUME "$setup_home/cp-local-development"
+
+# install
+
+# RUN ./install.sh
+
+# prepare for bashing
+
+WORKDIR "$setup_home"
+
+CMD /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh"
