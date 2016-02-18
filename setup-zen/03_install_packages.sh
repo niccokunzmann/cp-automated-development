@@ -34,14 +34,7 @@ export LANG=en_IE" >> ~/.bashrc
 #    An error occurred while trying to start Selenium. Check if JAVA is installed on your machine.
 if ! type java 2>>/dev/null
 then
-  echo "java not frond, installing java"
+  NOTE "java not found, installing java"
   # https://www.digitalocean.com/community/tutorials/how-to-install-java-on-ubuntu-with-apt-get
   PACKAGE default-jre
 fi
-
-SUBTITLE "Cleaning Up"
-
-# remove all unnecessary packages
-#   https://help.ubuntu.com/community/AptGet/Howto
-apt-get clean
-apt-get autoremove

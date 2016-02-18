@@ -3,7 +3,7 @@ FROM ubuntu:15.10
 # update the system
 # install the packages that are needed so we can jump back to this version if install fails
 RUN apt-get -qq update && \
-    apt-get -qq -y install sudo git curl g++ gcc unicode-data python wget make bzip2 postgresql-client default-jre postgresql postgresql-contrib pgadmin3 && \
+    apt-get -qq -y install sudo git curl g++ gcc unicode-data python wget make bzip2 postgresql-client default-jre postgresql postgresql-contrib pgadmin3 libfreetype6 libfontconfig && \
     apt-get -qq autoremove && \
     apt-get -qq clean
 

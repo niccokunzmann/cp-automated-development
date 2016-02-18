@@ -48,7 +48,11 @@ function NOTE() {
 
 function PACKAGES() {
   sudo apt-get -y -qq install "$@"
+# remove all unnecessary packages
+#   https://help.ubuntu.com/community/AptGet/Howto
   sudo apt-get clean
+  sudo apt-get autoremove
+
 }
 
 function PACKAGE() {
