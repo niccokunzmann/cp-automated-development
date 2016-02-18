@@ -38,7 +38,7 @@ RUN chown -R "$setup_user:$setup_user" "$setup_home"
 
 # install
 
-# RUN /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh" ./setup/install.sh
+RUN /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh" ./setup/install.sh
 
 # prepare for bashing
 
