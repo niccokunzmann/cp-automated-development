@@ -3,7 +3,7 @@ FROM ubuntu:15.10
 # update the system
 
 RUN apt-get -qq update && \
-    apt-get -qq -y install sudo && \
+    apt-get -qq -y install sudo git curl g++ gcc unicode-data python wget make bzip2 postgresql-client default-jre postgresql postgresql-contrib pgadmin3 && \
     apt-get -qq autoremove && \
     apt-get -qq clean
 
@@ -28,18 +28,18 @@ WORKDIR "$setup_home"
 ADD setup-zen setup
 ADD docker-home .
 
-RUN chown -R "$setup_user:$setup_user" "$setup_home"
-
 # create volumes
 
 VOLUME "$setup_home/cp-local-development"
+
+# after the file system is intialized, we own it!
+
+RUN chown -R "$setup_user:$setup_user" "$setup_home"
 
 # install
 
 # RUN /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh" ./setup/install.sh
 
 # prepare for bashing
-
-WORKDIR "$setup_home"
 
 CMD /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh"
