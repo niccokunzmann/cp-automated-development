@@ -8,7 +8,7 @@ COMMENT "  https://help.ubuntu.com/community/PostgreSQL"
 
 SUBTITLE "Install Packages"
 
-PACKAGES g++ gcc unicode-data python wget make bzip2 postgresql-client
+PACKAGES postgresql postgresql-contrib pgadmin3
 
 postgres_platform_user_password="QdYx3D5y"
 
