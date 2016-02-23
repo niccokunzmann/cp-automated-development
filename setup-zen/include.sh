@@ -92,7 +92,7 @@ function IN_REPOSITORY() {
 
 source "`dirname \"$0\"`/config.sh"
 
-if ! [ "$install_nodejs" == "yes" ] && ! [ "$install_nodejs" == "yes" ]
+if ! [ "$install_nodejs" == "yes" ] && ! [ "$install_nodejs" == "no" ]
 then
   CONFIG_ERROR "install_nodejs value in config.sh should be either \"no\" or \"yes\"."
 fi
