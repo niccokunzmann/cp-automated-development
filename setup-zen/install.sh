@@ -2,13 +2,13 @@
 
 set -e
 
-cd "`dirname \"$0\"`"
+local_directory="`dirname \"$0\"`"
 
 date_of_installation_start=$(date +"%s")
 
 for file in 01_install_nodejs.sh 02_clone_repository.sh 03_install_packages.sh 04_install_postgresql.sh 05_install_modules.sh 06_initialize.sh 07_testdata.sh
 do
-  "./$file"
+  "$local_directory/$file"
 done
 
 date_of_installation_end=$(date +"%s")
