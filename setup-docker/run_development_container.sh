@@ -2,7 +2,7 @@
 
 if [ -z "$1" ]
 then
-  image_name="coderdojo/cp-automated-setup"
+  image_name="coderdojo/cp-automated-development"
 else
   image_name="$1"
 fi
