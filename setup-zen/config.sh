@@ -19,7 +19,7 @@ cp_local_development_branch=master
 
 
 ## install_nodejs is a yes or no whether to install nodejs 
-## during the installation steps (yes) or whether to use the local installation.
+## during the installation steps (yes) or whether to use the local installation (no).
 ## When choosing no, be sure to use the right version.
 install_nodejs=yes
 
