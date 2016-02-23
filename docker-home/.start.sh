@@ -2,6 +2,9 @@
 
 # this file runs the shell and commands you use for the docker container
 
+# start postgresql on enter
+sudo /etc/init.d/postgresql start > /dev/null
+
 set -e
 
 export HOME="`pwd`"
