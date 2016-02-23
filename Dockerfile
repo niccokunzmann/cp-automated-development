@@ -28,10 +28,6 @@ WORKDIR "$setup_home"
 ADD setup-zen setup
 ADD docker-home .
 
-# create volumes
-
-VOLUME "$setup_home/cp-local-development"
-
 # after the file system is intialized, we own it!
 
 RUN chown -R "$setup_user:$setup_user" "$setup_home"
