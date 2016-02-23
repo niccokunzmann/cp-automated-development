@@ -15,8 +15,11 @@ fi
 if [ -n "$1" ]
 then
   # we have arguments
-  bash -c "$@"
-  exit $?
+  echo "$@" > /tmp/start.sh
+  bash /tmp/start.sh
+  exit_code=$?
+  rm -f /tmp/start.sh
+  exit $exit_code
 else
   bash
 fi

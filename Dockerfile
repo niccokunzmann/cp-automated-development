@@ -37,4 +37,4 @@ RUN /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh" ./setup/install.sh
 
 # prepare for bashing
 
-CMD /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh"
+ENTRYPOINT /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh"
