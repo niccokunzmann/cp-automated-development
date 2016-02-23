@@ -1,1 +1,24 @@
 # cp-automated-development
+
+This is an automation of [cp-local-development](https://github.com/CoderDojo/cp-local-development). 
+After you have installed it you can run the Zen platform locally.
+Currently you have two options to use it:
+
+- [Install cp-local-development locally](#local-installation)
+- [Pull a docker container and try it out](#docker-container)
+
+Local Installation
+------------------
+
+
+
+Docker Container
+----------------
+
+You can find the docker container at [docker hub](https://hub.docker.com/r/coderdojo/cp-automated-development).
+
+To install docker you can run [`setup-docker/01_install_docker.sh`](setup-docker/01_install_docker.sh). Then you should be able to run [`setup-docker/run_development_container.sh`](setup-docker/run_development_container.sh).
+
+If you would like to renew the docker image in docker hub, you can execute
+
+    curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/coderdojo/cp-automated-development/trigger/a55a66b3-1863-49ab-a7a4-c50effd3a99d/
