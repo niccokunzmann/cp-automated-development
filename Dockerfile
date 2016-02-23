@@ -11,7 +11,6 @@ RUN apt-get -qq update && \
 
 env setup_user zen
 env setup_home "/home/$setup_user"
-env setup_password zen
 
 # create user and home
 
