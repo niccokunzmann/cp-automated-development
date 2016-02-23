@@ -10,7 +10,8 @@ Currently you have two options to use it:
 Local Installation
 ------------------
 
-
+To install cp-local-development locally, [scripts](setup-zen) exist, tested under `Ubuntu 15.10`.
+You can [download](https://github.com/niccokunzmann/cp-automated-development/archive/master.zip) this repository and run the install script in the [`setup-zen`](setup-zen) folder install your version of Zen on your machine. If the default values do not please you, you can edit the [`setup-zen/config.sh`](setup-zen/config.sh) beforehand.
 
 Docker Container
 ----------------
