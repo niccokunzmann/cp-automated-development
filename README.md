@@ -17,7 +17,9 @@ Docker Container
 
 You can find the docker container at [docker hub](https://hub.docker.com/r/coderdojo/cp-automated-development).
 
-To install docker you can run [`setup-docker/01_install_docker.sh`](setup-docker/01_install_docker.sh). Then you should be able to run [`setup-docker/run_development_container.sh`](setup-docker/run_development_container.sh).
+To install docker you can run [`setup-docker/01_install_docker.sh`](setup-docker/01_install_docker.sh). Then you should be able to run [`setup-docker/run_development_container.sh`](setup-docker/run_development_container.sh), which essentially does
+
+    docker run -i -t coderdojo/cp-automated-setup
 
 If you would like to renew the docker image in docker hub, you can execute
 
