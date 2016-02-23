@@ -22,8 +22,12 @@ To install docker you can run [`setup-docker/01_install_docker.sh`](setup-docker
 
     docker run -i -t coderdojo/cp-automated-development
 
+And it commits the container afterwards so you can work on from the version you left. Usually jut executing the container does not change the base image.
+
+### Update Container
+
 If you would like to renew the docker image in docker hub, you can execute
 
     curl -H "Content-Type: application/json" --data '{"build": true}' -X POST https://registry.hub.docker.com/u/coderdojo/cp-automated-development/trigger/a55a66b3-1863-49ab-a7a4-c50effd3a99d/
 
-It takes about 45 minutes to create the new container.
+It takes about 45 minutes to create the new container. It uses [this](https://github.com/niccokunzmann/cp-automated-development) repository to laod the `Dockerfile`.
