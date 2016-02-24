@@ -8,7 +8,7 @@ RUN apt-get -qq update && \
     apt-get -qq clean
 
 # set variables
-
+# WHen changing this also change ENTRYPOINT
 env setup_user zen
 env setup_home "/home/$setup_user"
 
@@ -37,4 +37,6 @@ RUN /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh" ./setup/install.sh
 
 # prepare for bashing
 
-ENTRYPOINT /usr/bin/sudo -u "$setup_user" "$setup_home/.start.sh"
+#                                  $setup_user "$setup_home/.start.sh"
+ENTRYPOINT ["/usr/bin/sudo", "-u", "zen",      "/home/zen/.start.sh"]
+CMD ["bash"]
