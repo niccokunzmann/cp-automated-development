@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # this file runs the shell and commands you use for the docker container
+# When you edit it keep in mind that it is not yet read into memory and will be executed further
+# when you save it and exit the container.
 
 # start postgresql on enter
 sudo /etc/init.d/postgresql start > /dev/null
@@ -22,7 +24,9 @@ then
   bash /tmp/start.sh
   exit_code=$?
   rm -f /tmp/start.sh
-  exit $exit_code
 else
   bash
+  exit_code=$?
 fi
+
+exit $exit_code
