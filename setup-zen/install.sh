@@ -2,6 +2,8 @@
 
 set -e
 
+sudo apt-get update
+
 local_directory="`dirname \"$0\"`"
 
 date_of_installation_start=$(date +"%s")
